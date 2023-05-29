@@ -14,16 +14,16 @@ class MagicalContainer{
     MagicalContainer();
     class AscendingIterator{
         public:
-        AscendingIterator();
+        AscendingIterator(); 
         AscendingIterator(const MagicalContainer& other);
         ~AscendingIterator();
         AscendingIterator& operator=(const AscendingIterator& other);
-        bool operator==(const AscendingIterator& other);
-        bool operator!=(const AscendingIterator& other);
+        bool operator==(const AscendingIterator& other) const;
+        bool operator!=(const AscendingIterator& other) const;
         bool operator<(const AscendingIterator& other);
         bool operator>(const AscendingIterator& other);
         string operator*();
-        bool operator++();
+        AscendingIterator& operator++();
         AscendingIterator& begin();
         AscendingIterator& end();
     };
@@ -33,12 +33,12 @@ class MagicalContainer{
         PrimeIterator(const MagicalContainer& other);
         ~PrimeIterator();
         PrimeIterator& operator=(const PrimeIterator& other);
-        bool operator==(const PrimeIterator& other);
-        bool operator!=(const PrimeIterator& other);
+        bool operator==(const PrimeIterator& other) const;
+        bool operator!=(const PrimeIterator& other) const;
         bool operator<(const PrimeIterator& other);
         bool operator>(const PrimeIterator& other);
         string operator*();
-        bool operator++();
+        PrimeIterator& operator++();
         PrimeIterator& begin();
         PrimeIterator& end();
     };
@@ -48,12 +48,12 @@ class MagicalContainer{
         SideCrossIterator(const MagicalContainer& other);
         ~SideCrossIterator();
         SideCrossIterator& operator=(const SideCrossIterator& other);
-        bool operator==(const SideCrossIterator& other);
-        bool operator!=(const SideCrossIterator& other);
+        bool operator==(const SideCrossIterator& other) const;
+        bool operator!=(const SideCrossIterator& other) const;
         bool operator<(const SideCrossIterator& other);
         bool operator>(const SideCrossIterator& other);
         string operator*();
-        bool operator++();
+        SideCrossIterator& operator++();
         SideCrossIterator& begin();
         SideCrossIterator& end();
     };

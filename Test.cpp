@@ -31,6 +31,51 @@
         CHECK_NE(container.size() ,3);
     }
 
+    TEST_CASE("SideCrossIterator Itearator"){
+        MagicalContainer container;
+        container.addElement(1);
+        container.addElement(2);
+        container.addElement(3);
+        MagicalContainer::SideCrossIterator crossIter(container);
+        MagicalContainer::SideCrossIterator crossIter2(container);
+        CHECK_EQ(crossIter2, crossIter);
+        ++crossIter2;
+        CHECK_NE(crossIter2, crossIter);
+        ++crossIter;
+        CHECK_EQ(crossIter2, crossIter);
+        CHECK_EQ(crossIter2.begin(), crossIter.begin());
+        CHECK_EQ(crossIter2.begin(), crossIter.end());
+    }
+    TEST_CASE("PrimeIterator Itearator"){
+        MagicalContainer container;
+        container.addElement(1);
+        container.addElement(2);
+        container.addElement(3);
+        MagicalContainer::PrimeIterator crossIter(container);
+        MagicalContainer::PrimeIterator crossIter2(container);
+        CHECK_EQ(crossIter2, crossIter);
+        ++crossIter2;
+        CHECK_NE(crossIter2, crossIter);
+        ++crossIter;
+        CHECK_EQ(crossIter2, crossIter);
+        CHECK_EQ(crossIter2.begin(), crossIter.begin());
+        CHECK_EQ(crossIter2.begin(), crossIter.end());
+    }
+    TEST_CASE("AscendingIterator Itearator"){
+        MagicalContainer container;
+        container.addElement(1);
+        container.addElement(2);
+        container.addElement(3);
+        MagicalContainer::AscendingIterator crossIter(container);
+        MagicalContainer::AscendingIterator crossIter2(container);
+        CHECK_EQ(crossIter2, crossIter);
+        ++crossIter2;
+        CHECK_NE(crossIter2, crossIter);
+        ++crossIter;
+        CHECK_EQ(crossIter2, crossIter);
+        CHECK_EQ(crossIter2.begin(), crossIter.begin());
+        CHECK_EQ(crossIter2.begin(), crossIter.end());
+    }
    /*/ TEST_CASE("AscendingIterator") {
         MagicalContainer container;
         container.addElement(1);
